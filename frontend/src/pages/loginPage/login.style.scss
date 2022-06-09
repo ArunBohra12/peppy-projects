@@ -1,0 +1,66 @@
+@import '../../assets/scss/variables.scss';
+
+.login {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+
+  &-image {
+    position: fixed;
+    bottom: 0;
+    width: 30vw;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+
+    &-left {
+      left: 0;
+    }
+
+    &-right {
+      right: 0;
+    }
+  }
+
+  &-logo {
+    width: 12.5rem;
+  }
+
+  &-heading {
+    color: $gray;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &-form-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 50vw;
+    max-width: 48rem;
+    padding-bottom: 4rem;
+
+    @media only screen and (max-width: 768px) {
+      width: 85vw;
+    }
+  }
+
+  &-form {
+    width: 90%;
+  }
+
+  &-redirect {
+    font-weight: 600;
+    color: #4949c7;
+  }
+
+  .copyright {
+    color: #91939d;
+    font-weight: 500;
+  }
+}

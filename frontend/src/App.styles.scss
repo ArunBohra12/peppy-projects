@@ -1,0 +1,81 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+} // This makes 1rem = 10px (makes easire to calculate in rem)
+
+body {
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root,
+.App {
+  height: 100%;
+  overflow: hidden;
+}
+
+// ------------------------------------------------
+// CSS for application layout
+
+.main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+}
+
+.sidebar {
+  background: #4949c7;
+}
+
+.app-screen {
+  display: grid;
+  grid-template-rows: 6rem calc(100vh - 6rem);
+}
+
+.panel {
+  padding: 4rem;
+  overflow-y: scroll;
+  height: calc(100vh - 6rem);
+}
+
+.panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel {
+  scrollbar-width: 8px;
+  scrollbar-color: #90a4ae #cfd8dc;
+  background: #eeebef;
+}
+
+.panel::-webkit-scrollbar-track {
+  background: #cfd8dc;
+}
+
+.panel::-webkit-scrollbar-thumb {
+  background-color: #90a4ae;
+  border-radius: 6px;
+  border: 3px solid #cfd8dc;
+}
+
+.header {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  background: #fff;
+
+  width: 100%;
+  box-shadow: 0 0 1.5rem 0.5rem rgba(183, 192, 206, 0.3);
+}

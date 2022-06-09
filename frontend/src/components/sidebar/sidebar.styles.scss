@@ -1,0 +1,125 @@
+.sidebar {
+  display: grid;
+  justify-content: center;
+  padding: 1rem 0;
+  grid-template-rows: 7.5rem;
+
+  picture {
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 80%;
+      margin-left: 10%;
+      height: 3px;
+      background: #fff;
+      border-radius: 5rem;
+      left: 0;
+      bottom: 0.5rem;
+
+      @media only screen and (max-width: 768px) {
+        content: unset;
+      }
+    }
+  }
+
+  &-logo {
+    &-desktop {
+      width: 4rem;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding-top: 4rem;
+    width: 6rem;
+
+    &-bottom {
+      align-items: flex-end;
+    }
+
+    &-item {
+      width: 100%;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.active {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 3px;
+          height: 100%;
+          background: #fff;
+          border-radius: 32px;
+        }
+      }
+
+      img {
+        width: 2rem;
+      }
+
+      &-title {
+        display: none;
+
+        @media only screen and (max-width: 768px) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-menu-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2.5rem;
+
+    &-profile {
+      height: 4.5rem;
+      width: 4.5rem;
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      border-radius: 50%;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  &-task-add {
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 4.2rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      border-radius: 32px;
+    }
+  }
+}

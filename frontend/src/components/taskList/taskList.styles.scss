@@ -1,0 +1,118 @@
+$color-yellow: #ff0;
+$color-red: #f00;
+$color-info: #00ffff;
+$color-blue: #00f;
+
+@mixin task-row {
+  background: #fff;
+  border-bottom: 1px solid #f3efee;
+}
+
+.task-list {
+  &-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.4rem;
+
+    th,
+    td {
+      padding: 1.6rem 1.2rem;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    th {
+      text-align: left;
+      color: #96a6b0;
+    }
+
+    .task {
+      &-id {
+        max-width: 4rem;
+      }
+      &-name {
+        max-width: 15rem;
+      }
+      &-assigne {
+        width: 14rem;
+      }
+      &-status {
+        max-width: 11rem;
+      }
+      &-status {
+        max-width: 10rem;
+      }
+      &-due-date {
+        max-width: 16rem;
+      }
+    }
+  }
+
+  &-header {
+    @include task-row;
+  }
+
+  &-body {
+    tr {
+      @include task-row;
+      color: #545454;
+      font-size: 1.2rem;
+      transition: 0.5s;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+
+      &:hover {
+        color: #4949c8;
+      }
+
+      .priority-background {
+        padding: 0.5rem 1.2rem;
+        border-radius: 4px;
+
+        &.yellow {
+          background-color: #ffff0021;
+          color: $color-yellow;
+        }
+
+        &.blue {
+          background-color: #0000ff21;
+          color: $color-blue;
+        }
+
+        &.red {
+          background-color: #ff000021;
+          color: $color-red;
+        }
+
+        &.green {
+          background-color: #0f9f6521;
+          color: #185e2f;
+        }
+      }
+    }
+  }
+
+  &-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+
+    &.green {
+      fill: rgb(29, 133, 29);
+    }
+
+    &.yellow {
+      fill: $color-yellow;
+    }
+
+    &.red {
+      fill: $color-red;
+    }
+
+    &.blue {
+      fill: $color-info;
+    }
+  }
+}
