@@ -3,8 +3,6 @@ import loginImgRight from '../../assets/img/login-image-right.png';
 
 import RegisterForm from '../../components/registerForm/registerFrom.component';
 
-import '../loginPage/login.style.scss';
-
 const RegisterPage = ({ handleSubmit }) => {
   return (
     <div className='login'>

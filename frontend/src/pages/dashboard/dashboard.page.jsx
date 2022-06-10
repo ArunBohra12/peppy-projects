@@ -10,8 +10,6 @@ import tasksImg from '../../assets/svg/total-tasks.svg';
 import pendingImg from '../../assets/svg/pending.svg';
 import dueDateImg from '../../assets/svg/due-date.svg';
 
-import './dashboard.styles.scss';
-
 const DashboardPage = () => {
   const quickInfoCards = [
     {

@@ -1,5 +1,3 @@
-import './formGroup.styles.scss';
-
 import Input from '../input/input.component';
 
 const FormGroup = props => {

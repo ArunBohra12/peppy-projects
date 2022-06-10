@@ -1,0 +1,10 @@
+@mixin task-row {
+  background: #fff;
+  border-bottom: 1px solid #f3efee;
+}
+
+@mixin alignCenterFlexBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

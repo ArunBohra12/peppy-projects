@@ -1,0 +1,21 @@
+@import './assets/scss/variables';
+@import './assets/scss/basic.styles';
+@import './assets/scss/app.styles';
+@import './assets/scss/mixins.styles';
+
+// ----------------------------------------
+// Component SCSS imports
+
+@import './components/button/button.styles';
+@import './components/card/card.styles';
+@import './components/formGroup/formGroup.styles';
+@import './components/header/header.styles';
+@import './components/input/_input.styles';
+@import './components/sidebar/sidebar.styles';
+@import './components/taskList/taskList.styles';
+
+// ----------------------------------------
+// Page SCSS imports
+
+@import './pages/dashboard/dashboard.styles';
+@import './pages/loginPage/login.styles';

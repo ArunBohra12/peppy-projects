@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import logOutIcon from '../../assets/svg/logout-icon.svg';
-import './header.styles.scss';
 
 const Header = props => {
   const { page } = props;

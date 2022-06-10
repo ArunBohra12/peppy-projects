@@ -3,8 +3,6 @@ import loginImgRight from '../../assets/img/login-image-right.png';
 
 import LoginForm from '../../components/loginForm/loginForm';
 
-import './login.style.scss';
-
 const LoginPage = ({ handleSubmit }) => {
   return (
     <div className='login'>

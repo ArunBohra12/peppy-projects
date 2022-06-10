@@ -8,7 +8,6 @@ import addTaskIcon from '../../assets/svg/add-icon.svg';
 
 import { Link } from 'react-router-dom';
 
-import './sidebar.styles.scss';
 import SidebarLinksMenu from './sidebarLinksMenu.component';
 
 const Sidebar = () => {

@@ -9,7 +9,7 @@ import DashboardPage from './pages/dashboard/dashboard.page';
 import TasksPage from './pages/tasks/tasks.page';
 import Sidebar from './components/sidebar/sidebar.component';
 
-import './App.styles.scss';
+import './Main.styles.scss';
 
 class App extends React.Component {
   constructor() {

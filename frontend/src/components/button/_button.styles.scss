@@ -1,0 +1,27 @@
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  outline: none;
+  border: 1px solid #0000;
+  border-radius: 5px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-blue {
+  background-color: $primary;
+  border: 1px solid $primary;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.btn-blue:hover {
+  background-color: $secondary;
+  border: 1px solid $secondary;
+}
+
+.full-width {
+  width: 100%;
+}

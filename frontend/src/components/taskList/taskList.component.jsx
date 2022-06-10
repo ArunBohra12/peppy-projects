@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import { ReactComponent as PriorityIcon } from '../../assets/svg/priority-flag.svg';
+import TaskIcon from '../../assets/svg/task.svg';
+import BugIcon from '../../assets/svg/bug.svg';
+import SubtaskIcon from '../../assets/svg/subtask.svg';
 import { IoIosCalendar } from 'react-icons/io';
-
-import './taskList.styles.scss';
 
 class TaskList extends Component {
   constructor(props) {
@@ -26,7 +27,12 @@ class TaskList extends Component {
         </thead>
         <tbody className='task-list-body'>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={TaskIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -41,7 +47,12 @@ class TaskList extends Component {
             </td>
           </tr>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={BugIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -56,7 +67,12 @@ class TaskList extends Component {
             </td>
           </tr>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={TaskIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -71,7 +87,12 @@ class TaskList extends Component {
             </td>
           </tr>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={BugIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -87,7 +108,12 @@ class TaskList extends Component {
           </tr>
 
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={TaskIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>Complete ui for projects PeppyProjects</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -102,7 +128,12 @@ class TaskList extends Component {
             </td>
           </tr>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={SubtaskIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -117,7 +148,12 @@ class TaskList extends Component {
             </td>
           </tr>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={SubtaskIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -132,7 +168,12 @@ class TaskList extends Component {
             </td>
           </tr>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={TaskIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -147,7 +188,12 @@ class TaskList extends Component {
             </td>
           </tr>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={SubtaskIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>
@@ -162,7 +208,12 @@ class TaskList extends Component {
             </td>
           </tr>
           <tr>
-            <td className='task-id'>578</td>
+            <td className='task-id'>
+              <span className='task-icon'>
+                <img src={TaskIcon} alt='Task' />
+              </span>{' '}
+              578
+            </td>
             <td className='task-name'>fsadfasdf</td>
             <td className='task-assignee'>fasdfsd</td>
             <td className='task-status'>

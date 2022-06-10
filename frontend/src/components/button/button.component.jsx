@@ -1,5 +1,3 @@
-import './button.styles.scss';
-
 const Button = props => {
   const { value, className, ...otherBtnAttributes } = props;
   return (

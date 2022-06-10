@@ -88,17 +88,16 @@
     gap: 2.5rem;
 
     &-profile {
+      @include alignCenterFlexBox;
       height: 4.5rem;
       width: 4.5rem;
       background-color: #f1f1f1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
+      font-size: 1.6rem;
       border-radius: 50%;
       cursor: pointer;
       text-decoration: none;
-      color: #000;
+      color: $primary;
+      font-weight: 600;
     }
   }
 
