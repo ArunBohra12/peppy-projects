@@ -8,3 +8,9 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin headingSecondary {
+  color: #2d2d48;
+  font-size: 2.2rem;
+  font-weight: 600;
+}

@@ -25,3 +25,15 @@ body {
   height: 100%;
   overflow: hidden;
 }
+
+::selection {
+  background-color: $primary;
+  color: #fff;
+}
+
+// -------------------------------
+// HTML TAGS
+
+a {
+  text-decoration: none;
+}

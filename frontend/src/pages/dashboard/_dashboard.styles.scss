@@ -9,6 +9,10 @@
       padding: 1rem 5rem;
       border-radius: 1.5rem 1.5rem 0px 1.5rem;
       max-height: 45rem;
+
+      @media only screen and (max-width: 768px) {
+        padding: 1.5rem;
+      }
     }
 
     &-user {
@@ -34,6 +38,25 @@
 
       img {
         max-width: 25rem;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      &-user {
+        flex-basis: unset;
+        gap: 1rem;
+      }
+
+      &-name {
+        font-size: 2rem;
+      }
+
+      &-text {
+        font-size: 1.6rem;
+      }
+
+      &-img {
+        display: none;
       }
     }
   }
@@ -89,9 +112,7 @@
     gap: 1.5rem;
 
     h2 {
-      color: #2d2d48;
-      font-size: 2.2rem;
-      font-weight: 600;
+      @include headingSecondary;
     }
 
     .all-tasks-link {

@@ -1,3 +1,5 @@
+$sidebar-mobile-width: 22rem;
+
 .sidebar {
   display: grid;
   justify-content: center;
@@ -19,17 +21,11 @@
       border-radius: 5rem;
       left: 0;
       bottom: 0.5rem;
-
-      @media only screen and (max-width: 768px) {
-        content: unset;
-      }
     }
   }
 
   &-logo {
-    &-desktop {
-      width: 4rem;
-    }
+    width: 4rem;
   }
 
   &-menu {
@@ -72,6 +68,7 @@
 
       &-title {
         display: none;
+        color: #fff;
 
         @media only screen and (max-width: 768px) {
           display: block;
@@ -88,16 +85,19 @@
     gap: 2.5rem;
 
     &-profile {
-      @include alignCenterFlexBox;
-      height: 4.5rem;
-      width: 4.5rem;
-      background-color: #f1f1f1;
-      font-size: 1.6rem;
-      border-radius: 50%;
       cursor: pointer;
-      text-decoration: none;
-      color: $primary;
-      font-weight: 600;
+
+      &-icon {
+        @include alignCenterFlexBox;
+        height: 4.5rem;
+        width: 4.5rem;
+        background-color: #f1f1f1;
+        font-size: 1.6rem;
+        border-radius: 50%;
+        text-decoration: none;
+        color: $primary;
+        font-weight: 600;
+      }
     }
   }
 
@@ -119,6 +119,82 @@
       height: 3px;
       background: #fff;
       border-radius: 32px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sidebar-mobile-width;
+    height: 100%;
+    justify-content: start;
+    z-index: 999;
+    transform: translateX(-$sidebar-mobile-width);
+    transition: transform 0.3s;
+
+    &-show {
+      transform: translateX(0);
+    }
+
+    picture {
+      width: 100%;
+      text-align: left;
+      margin-left: 10px;
+      margin-top: 5px;
+
+      &::after {
+        content: unset;
+      }
+    }
+
+    &-menu {
+      width: 100%;
+
+      &-item {
+        justify-content: flex-start;
+        gap: 2rem;
+
+        img {
+          width: 2.5rem;
+          margin-left: 2rem;
+        }
+      }
+    }
+
+    &-logo {
+      width: 14rem;
+    }
+
+    &-menu-bottom {
+      align-items: flex-start;
+
+      > * {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 2rem;
+      }
+
+      &-profile-icon {
+        height: 3rem;
+        width: 3rem;
+        font-size: 1.4rem;
+      }
+    }
+
+    &-task-add {
+      position: relative;
+      cursor: pointer;
+
+      img {
+        width: 3rem;
+      }
+
+      &::after {
+        content: unset;
+      }
     }
   }
 }

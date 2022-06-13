@@ -11,6 +11,10 @@
   background: #4949c7;
 }
 
+.sidebar-overlay {
+  display: none;
+}
+
 .app-screen {
   display: grid;
   grid-template-rows: 6rem calc(100vh - 6rem);
@@ -50,4 +54,33 @@
 
   width: 100%;
   box-shadow: 0 0 1.5rem 0.5rem rgba(183, 192, 206, 0.3);
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+
+    .sidebar-overlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: $mobal-overlay-background;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s;
+    }
+
+    .show-sidebar-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .panel {
+    padding: 1.5rem;
+  }
 }

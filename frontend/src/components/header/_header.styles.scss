@@ -3,6 +3,10 @@
   align-items: center;
   padding: 1rem 2.5rem;
 
+  @media only screen and (max-width: 768px) {
+    padding: 1rem 1.5rem;
+  }
+
   &-title {
     font-size: 2rem;
     font-weight: 600;
@@ -15,5 +19,20 @@
 
   img {
     width: 2rem;
+  }
+}
+
+.sidebar-btn {
+  display: none;
+  cursor: pointer;
+  
+  @media only screen and (max-width: 768px) {
+    display: inline-block;
+    svg {
+      height: 3rem;
+      width: 3rem;
+      margin-left: 2rem;
+      fill: $primary;
+    }
   }
 }
