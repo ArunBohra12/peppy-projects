@@ -1,7 +1,8 @@
 @import './assets/scss/variables';
+@import './assets/scss/mixins.styles';
 @import './assets/scss/basic.styles';
 @import './assets/scss/app.styles';
-@import './assets/scss/mixins.styles';
+@import './assets/scss/animations.styles';
 
 // ----------------------------------------
 // Component SCSS imports
@@ -13,9 +14,15 @@
 @import './components/input/_input.styles';
 @import './components/sidebar/sidebar.styles';
 @import './components/taskList/taskList.styles';
+@import './components/modal/modal.styles';
+@import './components/pages/createTask/createTask.styles';
+@import './components/select/select.styles';
+@import './components/taskList/showTask.styles';
 
 // ----------------------------------------
 // Page SCSS imports
 
 @import './pages/dashboard/dashboard.styles';
+@import './pages/projectsPage/projects.styles';
+@import './pages/tasks/tasks.styles';
 @import './pages/loginPage/login.styles';

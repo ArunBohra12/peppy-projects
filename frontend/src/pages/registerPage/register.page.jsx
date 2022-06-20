@@ -1,7 +1,7 @@
 import loginImgLeft from '../../assets/img/login-image-left.png';
 import loginImgRight from '../../assets/img/login-image-right.png';
 
-import RegisterForm from '../../components/registerForm/registerFrom.component';
+import RegisterForm from '../../components/pages/registerForm/registerFrom.component';
 
 const RegisterPage = ({ handleSubmit }) => {
   return (

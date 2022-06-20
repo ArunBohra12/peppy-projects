@@ -1,0 +1,165 @@
+$create-task-modal-padding: 1.3rem 2%;
+
+.task-create {
+  display: grid;
+  grid-template-rows: 10rem calc(100vh - 18rem) 8rem;
+
+  &-header,
+  &-footer {
+    display: flex;
+    align-items: center;
+    padding: $create-task-modal-padding;
+  }
+  &-header {
+    background-color: $primary;
+    gap: 5rem;
+
+    .task-create-select {
+      width: 15rem;
+
+      label {
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 600;
+        font-family: inherit;
+      }
+
+      label + div {
+        color: #fff;
+        font-size: 1.5rem;
+        font-family: inherit;
+      }
+
+      label + div > div {
+        padding: 12px 10px;
+      }
+
+      fieldset {
+        border-color: #fff !important;
+        border-width: 2px;
+      }
+
+      svg {
+        fill: #fff;
+      }
+    }
+
+    .input-text {
+      margin-left: 4rem;
+      width: 50%;
+      display: inline-flex;
+
+      label {
+        color: #fff;
+      }
+
+      input {
+        color: #fff;
+        font-size: 2rem;
+        flex-grow: 1;
+      }
+
+      input::selection {
+        @include invert-background-selection;
+      }
+    }
+  }
+
+  &-body {
+    padding: $create-task-modal-padding;
+
+    .select-project-options {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+
+      .project-select,
+      .assignee-select {
+        width: 12rem;
+
+        *,
+        label {
+          font-family: inherit;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .assign-btn {
+      background-color: #0000ff21;
+      color: $color-blue;
+      padding: 0.5rem 1.2rem;
+      border-radius: $border-radius;
+      font-weight: 500;
+    }
+
+    .task-description {
+      height: 40rem;
+      max-height: 90%;
+      overflow: hidden;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #cfd8dc;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #90a4ae;
+        border-radius: 6px;
+        border: 3px solid #cfd8dc;
+      }
+
+      .textarea {
+        min-width: 100%;
+        max-width: 100%;
+        height: 35rem;
+        outline: none;
+        border: 1px solid $dark;
+        border-radius: $border-radius;
+        padding: 1.5rem;
+      }
+    }
+  }
+
+  &-footer {
+    box-shadow: 0px -1px 1rem 0.5rem rgba(183, 192, 206, 0.2);
+    background-color: $light;
+
+    button {
+      width: 8rem;
+      padding: 0.8rem 1rem;
+    }
+
+    .task-options {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+
+      .priority-selector,
+      .due-date-input {
+        cursor: pointer;
+      }
+
+      .priority-selector {
+        border: 1px solid $gray;
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .due-date-input {
+        border-radius: $border-radius;
+      }
+    }
+  }
+}

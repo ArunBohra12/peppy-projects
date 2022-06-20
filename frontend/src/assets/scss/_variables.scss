@@ -1,4 +1,4 @@
-// -------------------------
+// -----------------------------
 // COLOR VARIABLES
 
 $primary: #4949c7;
@@ -24,9 +24,30 @@ $color-info: #00ffff;
 $color-blue: #00f;
 
 // MODAL VARIABLES
-$mobal-overlay-background: rgba(0, 0, 0, 0.6);
+$modal-overlay-background: rgba(0, 0, 0, 0.6);
 
-// -------------------------
+// -----------------------------
 // ANIMATION VARIABLES
 
 $transition-time: 0.3s;
+
+// -----------------------------
+// BOX MODEL VARIABLES
+
+$border-radius: 5px;
+
+// -----------------------------
+// SHADOW VARIABLES
+
+$box-shadow-light: 0px 0px 2rem 0.2rem rgba(0, 0, 0, 0.2);
+$box-shadow-medium: 0px 0px 2rem 0.2rem rgba(0, 0, 0, 0.3);
+$box-shadow-dark: 0px 0px 2rem 0.2rem rgba(0, 0, 0, 0.5);
+
+// -----------------------------
+// Z INDEX VARIABLES
+
+$z-index-low: 9;
+$z-index-medium: 599;
+$z-index-high: 9999;
+$modal-overlay-z-index: 90;
+$modal-content-z-index: 999;

@@ -1,7 +1,7 @@
-import Button from '../button/button.component';
-import Card from '../card/card.component';
-import FormGroup from '../formGroup/formGroup';
-import logo from '../../assets/img/logo.png';
+import Button from '../../button/button.component';
+import Card from '../../card/card.component';
+import FormGroup from '../../formGroup/formGroup';
+import logo from '../../../assets/img/logo.png';
 
 import { Link } from 'react-router-dom';
 
@@ -16,14 +16,7 @@ const RegisterForm = ({ handleSubmit }) => {
       </h3>
 
       <form className='login-form' onSubmit={handleSubmit}>
-        <FormGroup
-          label='Organization Name'
-          name='registration-code'
-          id='registration-code'
-          type='text'
-          placeholder='Enter Organization Name'
-          required
-        />
+        <FormGroup label='Organization Name' name='registration-code' id='registration-code' type='text' placeholder='Enter Organization Name' required />
 
         <FormGroup label='Email' name='email' id='email' type='email' placeholder='Type your email ' required />
 

@@ -130,7 +130,7 @@ $sidebar-mobile-width: 22rem;
     width: $sidebar-mobile-width;
     height: 100%;
     justify-content: start;
-    z-index: 999;
+    z-index: $modal-content-z-index;
     transform: translateX(-$sidebar-mobile-width);
     transition: transform 0.3s;
 

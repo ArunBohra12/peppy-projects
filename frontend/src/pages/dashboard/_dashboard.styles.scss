@@ -81,7 +81,7 @@
       grid-template-columns: 1fr 0.7fr;
       padding: 1rem;
       background-color: #fff;
-      box-shadow: 0px 0px 2rem 0.2rem rgba(0, 0, 0, 0.1);
+      box-shadow: $box-shadow-light;
     }
 
     .card-text {
@@ -110,10 +110,6 @@
     display: flex;
     align-items: baseline;
     gap: 1.5rem;
-
-    h2 {
-      @include headingSecondary;
-    }
 
     .all-tasks-link {
       text-decoration: none;

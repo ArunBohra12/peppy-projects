@@ -67,8 +67,8 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: $mobal-overlay-background;
-      z-index: 99;
+      background: $modal-overlay-background;
+      z-index: $modal-overlay-z-index;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s;

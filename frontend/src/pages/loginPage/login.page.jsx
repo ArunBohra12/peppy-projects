@@ -1,7 +1,7 @@
 import loginImgLeft from '../../assets/img/login-image-left.png';
 import loginImgRight from '../../assets/img/login-image-right.png';
 
-import LoginForm from '../../components/loginForm/loginForm';
+import LoginForm from '../../components/pages/loginForm/loginForm';
 
 const LoginPage = ({ handleSubmit }) => {
   return (

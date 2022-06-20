@@ -1,0 +1,78 @@
+{
+  /*
+    Organizations - Owners
+        Owners
+            Projects
+              Tasks
+                Admins (are users as well)
+                Users
+    */
+
+  "Organizations": [
+    {
+      "name": "Test Org",
+      "registrationCode": "arun1234+Slaid",
+      "owner": "$.fas89faskfjaslksfd232", // Owner id
+      "creationDate": "23-06-2020",
+      "projects": ["afls93rnasklfjsfs"], // project ids
+      "users": ["user1", "user2", "user3", "user4"] // User Ids
+    }
+  ],
+
+  // //////////////////////////////////////
+  // OWNERS
+
+  "Owners": [
+    {
+      "name": "Arun Bohra",
+      "organization": "arun1234+Slaid", // Registration code
+      "email": "arunbohra@gmail.com",
+      "password": "$2k.dfkjsfo%@#@fsWEssdfsjfl"
+    }
+  ],
+
+  // //////////////////////////////////////
+  // PROJECTS
+
+  "Projects": [
+    {
+      "id": "afls93rnasklfjsfs",
+      "name": "Test Project",
+      "organization": "arun1234+Slaid",
+      "projectType": 1, // 2 - private or public
+      "admins": ["admin1", "admin2", "admin3"],
+      "users": ["user1", "user2", "user3"],
+      "tasks": [
+        {
+          "taskId": "123",
+          "createdBy": ["asf23faffsfsdfs", "Arun"], // [User Id, user name]
+          "assignedTo": ["slfaslkdfjaf'ds", "Test"], // [User Id, user name]
+          "createdOn": "23-04-2022",
+          "title": "Test task",
+          "status": 2, // 1, 2, 3
+          "priority": 1, // 1, 2, 3
+          "dueDate": "18-06-2022",
+          "description": "STRING FOR THE DESCRIPTION",
+          "comments": [
+            {
+              "commentBy": ["afaskfj382rji", "test user"], // [user id, user name]
+              "commentOn": "20-05-2022",
+              "comment": "STRING FOR THE COMMENT"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  // //////////////////////////////////////
+  // USERS
+  "Users": [
+    {
+      "name": "Arun Bohra",
+      "email": "arunbohra@gmail.com",
+      "password": "$2k.dfkjsfo%@#@fsWEssdfsjfl", // encrypted
+      "organization": "arun1234+Slaid"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+$create-task-modal-padding: 1.3rem 2%;
+
+.task-show {
+  display: grid;
+  grid-template-rows: 10rem calc(100vh - 18rem) 8rem;
+
+  &-header,
+  &-footer {
+    display: flex;
+    align-items: center;
+    padding: $create-task-modal-padding;
+  }
+  &-header {
+    background-color: $primary;
+
+    input::selection {
+      @include invert-background-selection;
+    }
+  }
+
+  &-body {
+    padding: $create-task-modal-padding;
+  }
+
+  &-footer {
+    box-shadow: 0px -1px 1rem 0.5rem rgba(183, 192, 206, 0.2);
+  }
+}

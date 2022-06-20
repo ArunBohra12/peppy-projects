@@ -1,0 +1,52 @@
+.modal {
+  height: 100vh;
+  width: 90vw;
+  background-color: #fff;
+  z-index: $modal-content-z-index;
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateX(90vw);
+  transition: opacity 0.4s, transform 0.6s;
+
+  &-show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $modal-overlay-background;
+    z-index: $modal-overlay-z-index;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+
+    &-show {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &-close-btn {
+    @include alignCenterFlexBox;
+
+    cursor: pointer;
+    background-color: #fff;
+    color: $dark;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    font-weight: 400;
+    font-size: 4rem;
+
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+}

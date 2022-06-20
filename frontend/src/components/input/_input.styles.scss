@@ -8,3 +8,16 @@
   border: 1px solid #e7e7e7;
   outline: none;
 }
+
+.input-text {
+  .text-label {
+    margin-right: 1rem;
+  }
+
+  .text-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+  }
+}
