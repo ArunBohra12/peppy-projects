@@ -2,8 +2,9 @@
 
 # dependencies
 /frontend/node_modules
-/backend/node_modules
 /frontend/package-lock.json
+/backend/node_modules
+/backend/config.env
 
 # misc
 .DS_Store
