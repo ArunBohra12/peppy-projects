@@ -1,0 +1,87 @@
+@import '../../assets/scss/core.styles';
+
+.login-register-page {
+  @include align-center-flexBox;
+  height: 100%;
+  flex-direction: column;
+
+  .card {
+    padding: 4rem 2rem;
+    background-color: #fff;
+  }
+}
+
+.login-image {
+  width: 40vh;
+  position: fixed;
+  bottom: 0;
+
+  @media screen and (max-width: 620px) {
+    display: none;
+  }
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+}
+
+.login-register-card {
+  min-width: 40rem;
+  position: relative;
+}
+
+.logo {
+  width: 14rem;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+.welcome-message {
+  text-align: center;
+  font-family: $font-family-secondary;
+  margin: 2rem 0;
+  color: $dark;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.page-redirect {
+  text-align: center;
+  margin-top: 4rem;
+
+  > a {
+    color: $primary;
+  }
+}
+
+.copyright-text {
+  color: $dark;
+  font-weight: $normal-font-weight;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+.login-register-card {
+  @media screen and (max-width: 500px) {
+    padding: 0;
+    min-width: 100vw;
+
+    &.card {
+      box-shadow: none;
+    }
+
+    .form {
+      width: 85%;
+    }
+  }
+}

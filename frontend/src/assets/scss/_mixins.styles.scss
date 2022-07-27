@@ -1,21 +1,52 @@
-@mixin task-row {
-  background: #fff;
-  border-bottom: 1px solid #f3efee;
+// ----------------------------
+// Custom cusors
+
+@mixin cursor {
+  cursor: url("data:image/svg+xml,%3Csvg fill='%23000000' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' width='18px' height='18px'%3E%3Cpath d='M35.654,24.09L13.524,3.404c-0.437-0.407-1.074-0.517-1.622-0.28C11.354,3.362,11,3.902,11,4.5v30	c0,0.577,0.331,1.103,0.851,1.352c0.519,0.251,1.137,0.18,1.587-0.181l6.112-4.892l5.777,13.306c0.33,0.76,1.214,1.109,1.973,0.778	l4.586-1.992c0.76-0.33,1.108-1.213,0.778-1.973l-3.044-7.011l-2.733-6.294l7.914-0.915c0.581-0.067,1.07-0.466,1.253-1.021	C36.237,25.1,36.081,24.49,35.654,24.09z'/%3E%3C/svg%3E"),
+    auto;
 }
 
-@mixin alignCenterFlexBox {
+@mixin cursor-hover {
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0'%3F%3E%3Csvg fill='%23000000' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='18px' height='18px'%3E%3Cpath d='M 11 2 C 9.895 2 9 2.895 9 4 L 9 12 L 9 13 L 9 19.5 C 6.448 18.201 5.289 18 4 18 C 2.503911 18 1.0097445 18.577311 1.0019531 20.486328 L 5.5 22.5 L 8.65625 25.65625 C 10.15625 27.15625 12.192453 28 14.314453 28 L 21 28 C 23.209 28 25 26.209 25 24 L 25 14 A 2 2 0 0 0 23 12 A 2 2 0 0 0 21.193359 13.148438 C 21.066812 13.062233 21 13 21 13 A 2 2 0 0 0 19 11 A 2 2 0 0 0 17 13 L 17 12 C 17 10.895 16.105 10 15 10 C 13.895 10 13 10.895 13 12 L 13 4 C 13 2.895 12.105 2 11 2 z M 1.0019531 20.486328 L 1 20.486328 L 1 20.5 C 1 20.494991 1.0019328 20.491319 1.0019531 20.486328 z' /%3E%3C/svg%3E"),
+    auto;
+}
+
+// ----------------------------
+// Custom scrollbar
+
+@mixin scrollbar {
+  // For webkit browsers
+  &::-webkit-scrollbar {
+    width: 8px;
+    // height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 10px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $secondary;
+  }
+}
+
+// ----------------------------
+// Other mixins
+
+@mixin align-center-flexBox {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin headingSecondary {
+@mixin heading-secondary {
   color: #2d2d48;
   font-size: 2.2rem;
   font-weight: 600;
-}
-
-@mixin invert-background-selection {
-  background-color: #fff;
-  color: $primary;
 }

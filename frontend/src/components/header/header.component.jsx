@@ -1,33 +1,23 @@
-import { useEffect } from 'react';
-import { IoMdMenu as MenuIcon } from 'react-icons/io';
-import logOutIcon from '../../assets/svg/logout-icon.svg';
+import { ReactComponent as LogoutIcon } from '../../assets/svg/icons/logout-icon.svg';
+import { ReactComponent as MenuIcon } from '../../assets/svg/icons/bars-icon.svg';
+import { toggleSidebarOpen } from '../../utils/sidebar';
 
-const Header = props => {
-  const { page } = props;
+import './header.styles.scss';
 
-  useEffect(() => {
-    document.title = 'PeppyProjects - ' + page;
-  });
+const logoutUser = () => {
+  console.log('Logout user');
+};
 
-  const openSidebar = () => {
-    const sidebarMenu = document.querySelector('.sidebar');
-    const sidebarOverlay = document.querySelector('.sidebar-overlay');
-
-    sidebarMenu.classList.add('sidebar-show');
-    sidebarOverlay.classList.add('show-sidebar-overlay');
-  };
-
-  const handleLogout = () => {
-    console.log('logout');
-  };
-
+const Header = () => {
   return (
     <header className='header'>
-      <div className='header-title'>{page}</div>
-      <div className='logout-btn' onClick={handleLogout}>
-        <img src={logOutIcon} alt='Logout' title='Logout' />
+      <h2 className='heading'>Dashboard</h2>
+
+      <div className='logout' onClick={logoutUser}>
+        <LogoutIcon />
       </div>
-      <div className='sidebar-btn' onClick={openSidebar}>
+
+      <div className='sidebar-menu-btn' onClick={toggleSidebarOpen}>
         <MenuIcon />
       </div>
     </header>

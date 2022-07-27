@@ -1,136 +1,123 @@
-.task-list {
-  overflow: hidden;
+@import '../../assets/scss/variables';
+$table-border: 2px solid #f3efee;
 
-  &-table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 1.4rem;
-
-    th,
-    td {
-      padding: 1.6rem 1.2rem;
-      font-weight: 600;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    th {
-      text-align: left;
-      color: #96a6b0;
-    }
-
-    .task {
-      &-id {
-        max-width: 7rem;
-
-        @media only screen and (max-width: 470px) {
-          min-width: 9rem;
-        }
-      }
-      &-icon img {
-        height: 1.5rem;
-        width: 1.5rem;
-        vertical-align: middle;
-        margin-right: 1rem;
-      }
-      &-name {
-        max-width: 15rem;
-      }
-      &-assignee {
-        width: 12rem;
-
-        @media only screen and (max-width: 470px) {
-          display: none;
-        }
-      }
-      &-status {
-        max-width: 11rem;
-
-        @media only screen and (max-width: 380px) {
-          display: none;
-        }
-      }
-      &-priority {
-        max-width: 10rem;
-
-        @media only screen and (max-width: 540px) {
-          display: none;
-        }
-      }
-      &-due-date {
-        max-width: 16rem;
-
-        @media only screen and (max-width: 690px) {
-          display: none;
-        }
-      }
-    }
-  }
+.task-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
 
   &-header {
-    @include task-row;
+    background-color: #fff;
+    font-size: 1.6rem;
+    border-bottom: $table-border;
+
+    &-cell {
+      padding: 1.35rem;
+      color: #96a6b0;
+      font-family: $font-family-secondary;
+      font-weight: $normal-font-weight;
+    }
   }
 
   &-body {
-    tr {
-      @include task-row;
-      color: #545454;
-      font-size: 1.2rem;
-      transition: 0.5s;
-      cursor: pointer;
-      white-space: nowrap;
-      overflow: hidden;
+    background-color: #fff;
+    font-size: 1.35rem;
 
+    &-row {
       &:hover {
         color: $primary;
+        cursor: pointer;
+        transition: color $transition-time;
+      }
+
+      &:not(:last-child) {
+        border-bottom: $table-border;
       }
     }
-  }
 
-  &-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    vertical-align: middle;
+    &-cell {
+      padding: 1.35rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
-    &.green {
-      fill: rgb(29, 133, 29);
-    }
-
-    &.yellow {
-      fill: $color-yellow;
-    }
-
-    &.red {
-      fill: $color-red;
-    }
-
-    &.blue {
-      fill: $color-info;
+      &:first-child {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
     }
   }
 }
 
-.priority-background {
-  padding: 0.5rem 1.2rem;
-  border-radius: 4px;
+.task-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
 
-  &.yellow {
-    background-color: #ffff0021;
-    color: $color-yellow;
+.title-cell {
+  width: 25rem;
+  max-width: 25rem;
+}
+
+.task-status-box {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: $border-radius-small;
+  display: inline-block;
+  min-width: 5.8rem;
+  text-align: center;
+}
+
+.priority-icon {
+  padding-left: 0.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
+
+  &.low {
+    fill: $gray;
   }
 
-  &.blue {
-    background-color: #0000ff21;
-    color: $color-blue;
+  &.medium {
+    fill: $info;
   }
 
-  &.red {
-    background-color: #ff000021;
-    color: $color-red;
+  &.high {
+    fill: $warning;
   }
 
-  &.green {
-    background-color: #0f9f6521;
-    color: #185e2f;
+  &.urgent {
+    fill: $danger;
+  }
+}
+
+.due-date-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  svg {
+    height: 1.2rem;
+    width: 1.2rem;
+    fill: $primary;
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .status-col,
+  .priority-col {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .due-date-col {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .assignee-col {
+    display: none;
   }
 }

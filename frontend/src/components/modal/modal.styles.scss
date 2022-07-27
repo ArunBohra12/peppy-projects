@@ -1,0 +1,52 @@
+@import '../../assets/scss/variables';
+
+.modal {
+  height: 70vh;
+  width: #{'min(90vw, 950px)'};
+  border-radius: $border-radius;
+  background-color: #fff;
+  z-index: $modal-content-z-index;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: opacity 0.4s, transform 0.4s;
+
+  &-show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $modal-overlay-background;
+    z-index: $modal-overlay-z-index;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+
+    &-show {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &-close-btn {
+    cursor: pointer;
+    color: #fff;
+    font-size: 3.8rem;
+
+    position: absolute;
+    top: -3.5rem;
+    right: -3rem;
+  }
+
+  @media only screen and (max-width: 760px) {
+    height: 60vh;
+  }
+}

@@ -1,6 +1,6 @@
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -8,37 +8,17 @@
 }
 
 html {
-  font-size: 62.5%;
-} // This makes 1rem = 10px (makes easire to calculate in rem)
+  font-size: 62.5%; // This makes 1rem = 10px (makes easire to calculate in rem)
+}
 
 body {
-  box-sizing: border-box;
-  font-size: 1.5rem;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 400;
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
+  font-size: 1.6rem;
+  font-family: $font-family-primary;
+  font-weight: $normal-font-weight;
 }
 
-#root,
-.App {
-  height: 100%;
-  overflow: hidden;
-}
-
-::selection {
-  background-color: $primary;
-  color: #fff;
-}
-
-// -------------------------------
-// HTML TAGS
-
-a {
-  text-decoration: none;
-}
-
-h2 {
-  @include headingSecondary;
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 58%;
+  }
 }

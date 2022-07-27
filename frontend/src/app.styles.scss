@@ -1,0 +1,59 @@
+@import './assets/scss/variables';
+
+.root {
+  display: grid;
+  grid-template-rows: 6rem auto;
+  grid-template-columns: 6.5rem 1fr;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cfd8dc;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #90a4ae;
+  border-radius: 6px;
+  border: 3px solid #cfd8dc;
+}
+
+.header {
+  grid-column: 2 / -1;
+  background-color: #fff;
+  box-shadow: $box-shadow-medium;
+}
+
+.sidebar {
+  grid-row: 1 / -1;
+  grid-column: 1;
+  background-color: $primary;
+}
+
+.panel {
+  background-color: $slate;
+  padding: 6rem 2.5rem 4rem;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    grid-column: 1 / -1;
+  }
+
+  .sidebar {
+    position: fixed;
+  }
+
+  .panel {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+  }
+
+  .panel {
+    padding: 6rem 1rem 4rem;
+  }
+}

@@ -1,86 +1,23 @@
-// ------------------------------------------------
-// CSS for application layout
-
-.main {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 6.5rem 1fr;
+#root,
+.root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-.sidebar {
-  background: #4949c7;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-secondary;
 }
 
-.sidebar-overlay {
-  display: none;
+a {
+  text-decoration: none;
 }
 
-.app-screen {
-  display: grid;
-  grid-template-rows: 6rem calc(100vh - 6rem);
-}
-
-.panel {
-  padding: 4rem;
-  overflow-y: scroll;
-  height: calc(100vh - 6rem);
-}
-
-.panel::-webkit-scrollbar {
-  width: 8px;
-}
-
-.panel {
-  scrollbar-width: 8px;
-  scrollbar-color: #90a4ae #cfd8dc;
-  background: #eeebef;
-}
-
-.panel::-webkit-scrollbar-track {
-  background: #cfd8dc;
-}
-
-.panel::-webkit-scrollbar-thumb {
-  background-color: #90a4ae;
-  border-radius: 6px;
-  border: 3px solid #cfd8dc;
-}
-
-.header {
-  background: #fff;
-  position: sticky;
-  top: 0;
-  background: #fff;
-
-  width: 100%;
-  box-shadow: 0 0 1.5rem 0.5rem rgba(183, 192, 206, 0.3);
-}
-
-@media only screen and (max-width: 768px) {
-  .main {
-    grid-template-columns: 1fr;
-
-    .sidebar-overlay {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: $modal-overlay-background;
-      z-index: $modal-overlay-z-index;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s;
-    }
-
-    .show-sidebar-overlay {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  .panel {
-    padding: 1.5rem;
-  }
+img {
+  display: inline-block;
 }

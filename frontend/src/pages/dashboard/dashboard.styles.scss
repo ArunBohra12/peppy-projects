@@ -1,0 +1,108 @@
+@import '../../assets/scss/variables';
+
+.welcome-box {
+  background-color: $primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: $border-radius-big $border-radius-big 0 $border-radius-big;
+  margin-bottom: 4rem;
+
+  &-text {
+    color: #fff;
+    padding: 4rem;
+
+    @media only screen and (max-width: 520px) {
+      padding: 1.5rem;
+    }
+
+    .greeting-heading {
+      font-weight: $normal-font-weight;
+      margin-bottom: 2rem;
+      font-size: 3rem;
+    }
+
+    .greeting-text {
+      font-size: 1.8rem;
+    }
+  }
+
+  &-image {
+    width: 22rem;
+    padding: 1rem 2rem;
+  }
+}
+
+.quick-stats-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2.5rem;
+  margin-bottom: 4rem;
+
+  @media only screen and (max-width: 1030px) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2.5rem;
+
+    .card {
+      padding: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 520px) {
+    grid-template-columns: 1fr;
+
+    .card {
+      padding: 2rem 4rem;
+    }
+  }
+
+  &-card {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 3.4rem;
+    color: #284566;
+    font-weight: $semi-bold-font-weight;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-title {
+    font-size: 1.75rem;
+    color: $gray;
+    font-family: $font-family-secondary;
+  }
+
+  .quick-stat-image,
+  .quick-stat-image img {
+    width: 10rem;
+
+    @media only screen and (max-width: 520px) {
+      width: 8rem;
+    }
+  }
+}
+
+.quick-tasks-box-heading {
+  display: flex;
+  gap: 2rem;
+  align-items: baseline;
+
+  .view-tasks-heading {
+    font-weight: $semi-bold-font-weight;
+    color: #2d2d48;
+  }
+
+  .view-tasks-link {
+    font-size: 1.4rem;
+    color: $primary;
+  }
+}
+
+.task-quick-view {
+  margin-top: 2rem;
+}

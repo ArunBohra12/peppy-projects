@@ -1,0 +1,109 @@
+@import '../../assets/scss/core.styles';
+
+$profile-page-padding: 2.5rem 4rem;
+
+.profile-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #bfc5d2;
+  font-size: 1.6rem;
+}
+
+.brand {
+  font-weight: $semi-bold-font-weight;
+}
+
+.options-menu {
+  display: flex;
+  gap: 2rem;
+
+  &-option {
+    padding-bottom: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: border-bottom 0.3s, color 0.3s;
+
+    &-active {
+      color: $primary;
+      border-bottom: 3px solid $primary;
+    }
+  }
+}
+
+.profile-content {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  column-gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.profile-label {
+  color: $gray;
+}
+
+.profile-card {
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-light;
+  padding: $profile-page-padding;
+  display: grid;
+  row-gap: 2.5rem;
+  align-self: flex-start;
+
+  .profile-label {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-card-value {
+    font-size: 1.6rem;
+    font-weight: $semi-bold-font-weight;
+  }
+
+  &-user {
+    text-align: center;
+
+    svg {
+      fill: $primary;
+    }
+
+    &-image {
+      height: 3rem;
+      width: 3rem;
+      display: inline-block;
+      background-color: rgba(73, 73, 199, 0.2);
+      border-radius: 50%;
+      padding: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    &-name {
+      font-weight: $normal-font-weight;
+    }
+  }
+}
+
+.profile-settings,
+.profile-change-password {
+  background-color: #fff;
+  border-radius: $border-radius;
+  padding: $profile-page-padding;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  .profile-label {
+    margin-bottom: 1rem;
+  }
+
+  .profile-detail-input {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.profile-btn {
+  width: max-content;
+}

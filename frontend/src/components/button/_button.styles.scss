@@ -8,20 +8,35 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   padding: 10px;
   cursor: pointer;
-}
 
-.btn-blue {
-  background-color: $primary;
-  border: 1px solid $primary;
-  color: #fff;
-  transition: all 0.3s;
-}
+  &:hover,
+  &:focus {
+    background-color: #d0d0d7;
+    border: 1px solid #d0d0d7;
+  }
 
-.btn-blue:hover {
-  background-color: $secondary;
-  border: 1px solid $secondary;
-}
+  &:focus {
+    box-shadow: 0 0 0 0.38rem rgba(208, 208, 215, 0.5);
+  }
 
-.full-width {
-  width: 100%;
+  &--blue {
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  &--blue:hover,
+  &--blue:focus {
+    background-color: $secondary;
+    border: 1px solid $secondary;
+  }
+
+  &--blue:focus {
+    box-shadow: 0 0 0 0.38rem rgba($primary, 0.5);
+  }
+
+  &--full {
+    width: 100%;
+  }
 }

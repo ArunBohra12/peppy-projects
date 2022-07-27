@@ -1,120 +1,74 @@
-import { Component } from 'react';
-import { ReactComponent as PriorityIcon } from '../../assets/svg/priority-flag.svg';
+import { useEffect, useState } from 'react';
+import ApiFeatures from '../../api/apiFeatures';
+import { ReactComponent as PriorityIcon } from '../../assets/svg/icons/priority-flag.svg';
+import { ReactComponent as TaskIcon } from '../../assets/svg/icons/task.svg';
+import { ReactComponent as CalenderIcon } from '../../assets/svg/icons/calender-icon.svg';
 
-import TaskIcon from '../../assets/svg/task.svg';
-import BugIcon from '../../assets/svg/bug.svg';
-import SubtaskIcon from '../../assets/svg/subtask.svg';
-import Modal from '../modal/modal.component';
-import ShowTask from './showTask.component';
+function camelize(str) {
+  return str
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+      return index === 0 ? word.toLowerCase() : word.toUpperCase();
+    })
+    .replace(/\s+/g, '');
+}
 
-import { IoIosCalendar } from 'react-icons/io';
+const TaskList = props => {
+  const { taskList } = props;
+  const [statusColors, setStatusColors] = useState({});
 
-class TaskList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tasks: props.tasks ?? [],
-      showTask: false,
-    };
-  }
+  useEffect(() => {
+    const api = new ApiFeatures();
 
-  taskToOpen = [];
+    const brandDesignInfo = api.getBrandDesignInfo();
+    setStatusColors(brandDesignInfo.statusColors);
+  }, []);
 
-  openTask = task => {
-    this.taskToOpen = task;
-    this.setState({ showTask: true });
-  };
-  handleCloseModal = () => this.setState({ showTask: false });
-
-  render() {
-    return (
-      <>
+  return (
+    <>
+      <div className='task-list-container'>
         <table className='task-list-table'>
-          <thead className='task-list-header'>
+          <thead className='task-list-table-header'>
             <tr>
-              <th className='task-id'>ID</th>
-              <th className='task-name'>Title</th>
-              <th className='task-assignee'>Assignee</th>
-              <th className='task-status'>Status</th>
-              <th className='task-priority'>Priority</th>
-              <th className='task-due-date'>Due Date</th>
+              <th className='task-list-table-header-cell id-col'>ID</th>
+              <th className='task-list-table-header-cell title-col'>Title</th>
+              <th className='task-list-table-header-cell assignee-col'>Assignee</th>
+              <th className='task-list-table-header-cell status-col'>Status</th>
+              <th className='task-list-table-header-cell priority-col'>Priority</th>
+              <th className='task-list-table-header-cell due-date-col'>Due Date</th>
             </tr>
           </thead>
-          <tbody className='task-list-body'>
-            {this.state.tasks.map((task, i) => {
-              const taskIcon =
-                task.taskType === 1 ? TaskIcon : task.taskType === 2 ? SubtaskIcon : task.taskType === 3 ? BugIcon : '';
-              const taskPriority =
-                task.taskPriority === 1
-                  ? 'Low'
-                  : task.taskPriority === 2
-                  ? 'Medium'
-                  : task.taskPriority === 3
-                  ? 'High'
-                  : task.taskPriority === 4
-                  ? 'Urgent'
-                  : '';
-
-              let taskStatus, taskColor;
-
-              switch (task.taskStatus) {
-                case 1:
-                  taskStatus = 'Todo';
-                  taskColor = 'yellow';
-                  break;
-
-                case 2:
-                  taskStatus = 'In Progress';
-                  taskColor = 'blue';
-                  break;
-
-                case 3:
-                  taskStatus = 'In Review';
-                  taskColor = 'red';
-                  break;
-
-                case 4:
-                  taskStatus = 'Done';
-                  taskColor = 'green';
-                  break;
-
-                default:
-                  taskStatus = '';
-                  taskColor = '';
-                  break;
-              }
+          <tbody className='task-list-table-body'>
+            {taskList.map((task, index) => {
+              const taskStatus = camelize(task.status);
+              const [taskStatusColor, statusBackground] = [statusColors[taskStatus], statusColors[taskStatus] + '21'];
 
               return (
-                <tr key={i} onClick={() => this.openTask(task)}>
-                  <td className='task-id'>
-                    <span className='task-icon'>
-                      <img src={taskIcon} alt='Task' />
+                <tr key={index} className='task-list-table-body-row'>
+                  <td className='task-list-table-body-cell id-col'>
+                    <TaskIcon className='task-icon' /> {task.id}
+                  </td>
+                  <td className='task-list-table-body-cell title-cell title-col'>{task.title}</td>
+                  <td className='task-list-table-body-cell assignee-col'>{task.assignee.name}</td>
+                  <td className='task-list-table-body-cell status-col'>
+                    <span className='task-status-box' style={{ color: taskStatusColor, backgroundColor: statusBackground }}>
+                      {task.status}
                     </span>
-                    &nbsp; {task.taskId}
                   </td>
-                  <td className='task-name'>{task.taskName}</td>
-                  <td className='task-assignee'>{task.taskAssignee.name}</td>
-                  <td className='task-status'>
-                    <span className={`priority-background ${taskColor}`}>{taskStatus}</span>
+                  <td className='task-list-table-body-cell priority-cell priority-col'>
+                    <PriorityIcon className={`${task.priority.toLowerCase()} priority-icon`} title={task.priority} />
                   </td>
-                  <td className='task-priority'>
-                    <PriorityIcon className={`task-list-icon ${taskColor}`} title={taskPriority} />
-                  </td>
-                  <td className='task-due-date'>
-                    <IoIosCalendar className='task-list-icon' />
-                    &nbsp;{task.taskDueDate}
+                  <td className='task-list-table-body-cell due-date-cell due-date-col'>
+                    <CalenderIcon />
+                    {task.dueDate}
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-        <Modal closeModal={this.handleCloseModal} state={this.state.showTask}>
-          {this.state.showTask && <ShowTask task={this.taskToOpen} />}
-        </Modal>
-      </>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};
 
 export default TaskList;

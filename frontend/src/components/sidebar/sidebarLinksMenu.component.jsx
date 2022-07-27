@@ -1,71 +1,53 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import dashboardIcon from '../../assets/svg/dashboard-icon.svg';
-import projectIcon from '../../assets/svg/project-icon.svg';
-import taskIcon from '../../assets/svg/task-icon.svg';
+import { Link, useLocation } from 'react-router-dom';
+import { toggleSidebarOpen } from '../../utils/sidebar';
+import dashboardIcon from '../../assets/svg/icons/dashboard-icon.svg';
+import projectIcon from '../../assets/svg/icons/project-icon.svg';
+import taskIcon from '../../assets/svg/icons/task-icon.svg';
+import settingsIcon from '../../assets/svg/icons/settings-icon.svg';
 
 const SidebarLinksMenu = () => {
-  const path = window.location.pathname.split('/')[1] ? window.location.pathname.split('/')[1].toLowerCase() : '/';
-  const [sidebarMenuObj, setSidebarMenu] = useState([
+  const { pathname } = useLocation();
+
+  const links = [
     {
-      id: 1,
       link: '/dashboard',
       title: 'Dashboard',
       icon: dashboardIcon,
-      active: path === 'dashboard' || path === '/',
+      active: pathname === '/dashboard',
     },
     {
-      id: 2,
       link: '/projects',
       title: 'Projects',
       icon: projectIcon,
-      active: path === 'projects',
+      active: pathname === '/projects',
     },
     {
-      id: 3,
       link: '/tasks',
       title: 'Tasks',
       icon: taskIcon,
-      active: path === 'tasks',
+      active: pathname === '/tasks',
     },
-  ]);
+    {
+      link: '/settings',
+      title: 'Settings',
+      icon: settingsIcon,
+      active: pathname === '/settings',
+    },
+  ];
 
-  const activeLinkHandler = e => {
-    const selectedItem = e.target.closest('.sidebar-menu-item').getAttribute('title');
-    setSidebarMenu([
-      {
-        id: 1,
-        link: '/dashboard',
-        title: 'Dashboard',
-        icon: dashboardIcon,
-        active: selectedItem === 'Dashboard',
-      },
-      {
-        id: 2,
-        link: '/projects',
-        title: 'Projects',
-        icon: projectIcon,
-        active: selectedItem === 'Projects',
-      },
-      {
-        id: 3,
-        link: '/tasks',
-        title: 'Tasks',
-        icon: taskIcon,
-        active: selectedItem === 'Tasks',
-      },
-    ]);
+  const changePage = () => {
+    toggleSidebarOpen();
   };
 
   return (
-    <div className='sidebar-menu'>
-      {sidebarMenuObj.map(menuItem => (
-        <Link key={menuItem.id} to={menuItem.link} className={`sidebar-menu-item ${menuItem.active ? 'active' : ''}`} title={menuItem.title} onClick={activeLinkHandler}>
-          <img src={menuItem.icon} alt={menuItem.title} />
-          <span className='sidebar-menu-item-title'>{menuItem.title}</span>
+    <>
+      {links.map((link, i) => (
+        <Link key={i} className={`sidebar-options-link ${link.active ? 'active-page' : ''}`} to={link.link} onClick={() => changePage(i)} data-title={link.title}>
+          <img className='sidebar-options-link-logo' src={link.icon} alt={link.title} />
+          <div className='sidebar-options-link-text'>{link.title}</div>
         </Link>
       ))}
-    </div>
+    </>
   );
 };
 

@@ -1,101 +1,54 @@
-import { Component } from 'react';
-import Header from '../../components/header/header.component';
-import QuickInfo from '../../components/quickInfo/quickInfo.component';
-import TaskList from '../../components/taskList/taskList.component';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IoIosArrowForward } from 'react-icons/io';
+import welcomeImage from '../../assets/svg/images/welcome.svg';
+import QuickStats from '../../components/pages/dashboard/quickStats.component';
+import TaskList from '../../components/taskList/taskList.component';
+import ApiFeatures from '../../api/apiFeatures';
 
-import greetingImg from '../../assets/svg/welcome.svg';
-import projectsImg from '../../assets/svg/projects.svg';
-import tasksImg from '../../assets/svg/total-tasks.svg';
-import pendingImg from '../../assets/svg/pending.svg';
-import dueDateImg from '../../assets/svg/due-date.svg';
+import './dashboard.styles.scss';
+import Modal from '../../components/modal/modal.component';
 
-class DashboardPage extends Component {
-  constructor() {
-    super();
+const Dashboard = () => {
+  const [tasksList, setTasksList] = useState([]);
 
-    this.state = {
-      tasks: [],
-      quickInfoCards: [
-        {
-          id: 1,
-          number: 23,
-          type: 'Projects',
-          image: projectsImg,
-        },
-        {
-          id: 2,
-          number: 354,
-          type: 'Total Tasks',
-          image: tasksImg,
-        },
-        {
-          id: 3,
-          number: 11,
-          type: 'Pending',
-          image: pendingImg,
-        },
-        {
-          id: 4,
-          number: 23,
-          type: 'Due tasks',
-          image: dueDateImg,
-        },
-      ],
-    };
-  }
+  useEffect(() => {
+    const api = new ApiFeatures();
+    const tasksDetails = api.getTaskList();
+    const { tasks } = tasksDetails;
+    setTasksList(tasks);
+  }, []);
 
-  UNSAFE_componentWillMount() {
-    const sampleTask = {
-      taskId: 2333,
-      taskName: 'Test task',
-      taskType: 1,
-      taskAssignee: {
-        name: 'Arun',
-        id: '3w92kfsjdflskf',
-      },
-      taskStatus: 3,
-      taskPriority: 1,
-      taskDueDate: '23 Sept 2022',
-    };
+  return (
+    <>
+      <div className='welcome-box'>
+        <div className='welcome-box-text'>
+          <h2 className='greeting-heading'>Hi Arun Bohra,</h2>
+          <p className='greeting-text'>Check out any upcoming tasks and recent projects below!</p>
+        </div>
 
-    this.setState({ tasks: [sampleTask, sampleTask] });
-  }
+        <div className='welcome-box-image'>
+          <img src={welcomeImage} alt='Welcome' />
+        </div>
+      </div>
 
-  render() {
-    return (
-      <>
-        <Header page='Dashboard' />
+      <div className='quick-stats-box'>
+        <QuickStats />
+      </div>
 
-        <section className='dashboard panel'>
-          <div className='greeting-container'>
-            <div className='greeting-user'>
-              <div className='greeting-name'>Hi, Arun!</div>
-              <div className='greeting-text'>Check out any upcoming tasks and recent projects below!</div>
-            </div>
+      <div className='quick-tasks-box'>
+        <div className='quick-tasks-box-heading'>
+          <h2 className='view-tasks-heading'>Tasks Due Soon</h2>
+          <Link className='view-tasks-link' to='/tasks'>
+            View All &#65310;
+          </Link>
+        </div>
+      </div>
 
-            <div className='greeting-img'>
-              <img src={greetingImg} alt='Welcome' />
-            </div>
-          </div>
+      <div className='task-quick-view'>
+        <TaskList taskList={tasksList} />
+      </div>
+    </>
+  );
+};
 
-          <QuickInfo quickInfoCards={this.state.quickInfoCards} />
-
-          <div className='tasks-list-heading'>
-            <h2>Tasks Due Soon</h2>
-            <Link className='all-tasks-link' to='/tasks'>
-              View All <IoIosArrowForward />
-            </Link>
-          </div>
-
-          <div className='tasks-list'>
-            <TaskList tasks={this.state.tasks} />
-          </div>
-        </section>
-      </>
-    );
-  }
-}
-
-export default DashboardPage;
+export default Dashboard;

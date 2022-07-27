@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
+    <title>Add icon</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <rect style="fill:#ffbf54;" width="42" height="42" rx="7" />
+            <line style="fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;" x1="21" y1="13.5" x2="21" y2="28.5" />
+            <line style="fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;" x1="28.5" y1="21" x2="13.5" y2="21" />
+        </g>
+    </g>
+</svg>

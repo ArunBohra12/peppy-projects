@@ -1,61 +1,52 @@
 import { useState } from 'react';
-import sidebarLogo from '../../assets/img/white-icon.png';
-import sidebarLogoWithTitle from '../../assets/img/white-logo.png';
-import addTaskIcon from '../../assets/svg/add-icon.svg';
-
-import { Link } from 'react-router-dom';
-
 import SidebarLinksMenu from './sidebarLinksMenu.component';
-import Modal from '../../components/modal/modal.component';
-import CreateTask from '../pages/createTask/createTask.component';
+import { toggleSidebarOpen } from '../../utils/sidebar';
+import Modal from '../modal/modal.component';
+
+import logo from '../../assets/img/white-icon.png';
+import textLogo from '../../assets/img/white-logo.png';
+import { Link } from 'react-router-dom';
+import { ReactComponent as CreateTaskIcon } from '../../assets/svg/icons/add-icon.svg';
+
+import './sidebar.styles.scss';
 
 const Sidebar = () => {
-  const [createTask, setCreateTask] = useState(false);
-
-  const handleCloseModal = () => {
-    setCreateTask(false);
-  };
-
-  /*
-    id
-    status
-    type
-    title
-    description
-    priority
-    due-date
-    created by
-    created on
-    comments
-  */
+  const [createTaskModalState, setCreateTaskModalState] = useState(false);
+  const closeModal = () => setCreateTaskModalState(false);
 
   return (
-    <aside className='sidebar'>
-      <picture>
-        <source media='(min-width: 768px)' srcSet={sidebarLogo} />
-        <source media='(max-width: 768px)' srcSet={sidebarLogoWithTitle} />
-        <img src={sidebarLogo} alt='PeppyProjects' className='sidebar-logo' />
-      </picture>
-      <SidebarLinksMenu />
+    <>
+      <div className='sidebar-overlay' onClick={toggleSidebarOpen}></div>
 
-      <div className='sidebar-menu-bottom'>
-        <div className='sidebar-task-add' onClick={() => setCreateTask(true)}>
-          <img src={addTaskIcon} alt='Add Task' title='Add Task' />
-          <span className='sidebar-menu-item-title'>Create Task</span>
-        </div>
-
-        <div className='sidebar-menu-bottom-profile'>
-          <Link to='/profile' className='sidebar-menu-bottom-profile-icon'>
-            AB
-          </Link>
-          <span className='sidebar-menu-item-title'>Arun Bohra</span>
-        </div>
-      </div>
-
-      <Modal closeModal={handleCloseModal} state={createTask}>
-        {createTask && <CreateTask />}
+      <Modal state={createTaskModalState} closeModal={closeModal}>
+        arun bohra
       </Modal>
-    </aside>
+
+      <aside className='sidebar'>
+        <div className='sidebar-logo'>
+          <picture>
+            <source media='(max-width: 760px)' srcSet={textLogo} />
+            <source media='(min-width: 760px)' srcSet={logo} />
+            <img className='sidebar-logo-icon' src={logo} alt='Logo' />
+          </picture>
+        </div>
+        <div className='sidebar-options'>
+          <SidebarLinksMenu />
+        </div>
+        <div className='actions'>
+          <div className='create-task' onClick={() => setCreateTaskModalState(prev => !prev.createTaskModalState)}>
+            <CreateTaskIcon />
+            <div className='actions-title'>Create Task</div>
+          </div>
+
+          <Link className='user-profile' to='/profile' onClick={toggleSidebarOpen}>
+            <div className='user-profile-icon'>AB</div>
+
+            <div className='actions-title'>Arun Bohra</div>
+          </Link>
+        </div>
+      </aside>
+    </>
   );
 };
 

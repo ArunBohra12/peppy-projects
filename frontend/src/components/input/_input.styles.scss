@@ -1,23 +1,22 @@
 .input {
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1.4;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.6rem;
   color: #343434;
+  font-weight: $normal-font-weight;
   background-color: #fff;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #ced4da;
+  border-radius: $border-radius;
   outline: none;
-}
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-.input-text {
-  .text-label {
-    margin-right: 1rem;
+  &:focus {
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.38rem rgba(13, 110, 253, 0.25);
   }
 
-  .text-input {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    border-bottom: 2px solid #fff;
+  &::placeholder {
+    font-size: 1.4rem;
   }
 }

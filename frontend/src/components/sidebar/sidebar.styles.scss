@@ -1,0 +1,227 @@
+@import '../../assets/scss/variables';
+
+@mixin tooltipHidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-time, visibility $transition-time, transform $transition-time;
+}
+
+@mixin tooltipVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin bottomLine {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 70%;
+  border-radius: $border-radius-small;
+  background-color: #fff;
+  height: 2px;
+  bottom: -1rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform $transition-time;
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: $modal-overlay-background;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity $transition-time, visibility $transition-time;
+  }
+
+  &-logo {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 2rem;
+    position: relative;
+
+    &::after {
+      @include bottomLine;
+    }
+
+    &-icon {
+      width: 4.5rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      justify-content: flex-start;
+      margin-left: 3rem;
+      margin-bottom: 0;
+      margin-top: 2rem;
+
+      &::after {
+        content: unset;
+      }
+
+      &-icon {
+        width: 12rem;
+      }
+    }
+  }
+
+  &-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 2.75rem;
+
+    &-link {
+      position: relative;
+      text-align: center;
+      padding: 0.8rem 0;
+      border-left: 2px solid transparent;
+      transition: border-left $transition-time;
+
+      &.active-page {
+        border-left: 2px solid #fff;
+      }
+
+      &-logo {
+        width: 2rem;
+        vertical-align: middle;
+      }
+
+      &-text {
+        display: none;
+
+        @media only screen and (max-width: 768px) {
+          display: block;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        display: flex;
+        gap: 4rem;
+        padding-left: 3rem;
+        color: #fff;
+      }
+
+      @media only screen and (min-width: 768px) {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          width: 0;
+          height: 0;
+          border-top: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-right: 4px solid $primary;
+          transform: translate(4.48rem, -50%);
+
+          @include tooltipHidden;
+        }
+
+        &:hover::before {
+          transform: translate(0.6rem, -50%);
+          @include tooltipVisible;
+        }
+
+        &::after {
+          content: attr(data-title);
+          display: inline-block;
+          height: 2rem;
+          width: max-content;
+          border-left: 2.5px solid $primary;
+          border-radius: 0 $border-radius $border-radius 0;
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          font-size: 1.4rem;
+          padding: 0.4rem 1.2rem;
+          background-color: #fff;
+          color: $primary;
+          transform: translate(4rem, -50%);
+          @include tooltipHidden;
+        }
+
+        &:hover::after {
+          transform: translate(1rem, -50%);
+          @include tooltipVisible;
+        }
+      }
+    }
+  }
+
+  .actions {
+    margin-top: auto;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+
+    &-title {
+      display: none;
+      color: #fff;
+    }
+
+    .create-task {
+      cursor: pointer;
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+
+    .user-profile-icon {
+      height: 4rem;
+      width: 4rem;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: $dark;
+      font-weight: $semi-bold-font-weight;
+      font-family: $font-family-secondary;
+    }
+
+    @media only screen and (max-width: 768px) {
+      align-items: self-start;
+      margin-left: 3rem;
+
+      .create-task svg,
+      .user-profile-icon {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      > * {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+      }
+
+      &-title {
+        display: block;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    transform: translateX(-100%);
+
+    &-open {
+      width: 25rem;
+      transform: translateX(0);
+
+      &-overlay {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

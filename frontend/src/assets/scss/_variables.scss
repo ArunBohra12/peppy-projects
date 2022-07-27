@@ -11,6 +11,7 @@ $teal: #20c997;
 
 $dark: #343a40;
 $gray: #6c757d;
+$slate: #eeebf2;
 
 $success: #28a745;
 $info: #17a2b8;
@@ -34,14 +35,16 @@ $transition-time: 0.3s;
 // -----------------------------
 // BOX MODEL VARIABLES
 
+$border-radius-small: 3px;
 $border-radius: 5px;
+$border-radius-big: 15px;
 
 // -----------------------------
 // SHADOW VARIABLES
 
-$box-shadow-light: 0px 0px 2rem 0.2rem rgba(0, 0, 0, 0.2);
-$box-shadow-medium: 0px 0px 2rem 0.2rem rgba(0, 0, 0, 0.3);
-$box-shadow-dark: 0px 0px 2rem 0.2rem rgba(0, 0, 0, 0.5);
+$box-shadow-light: 0px 0px 1rem 0.1rem rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0px 0px 1.2rem 0.12rem rgba(0, 0, 0, 0.2);
+$box-shadow-dark: 0px 0px 1.3rem 0.15rem rgba(0, 0, 0, 0.3);
 
 // -----------------------------
 // Z INDEX VARIABLES
@@ -51,3 +54,11 @@ $z-index-medium: 599;
 $z-index-high: 9999;
 $modal-overlay-z-index: 90;
 $modal-content-z-index: 999;
+
+// -----------------------------
+// FONT VARIABLES
+
+$font-family-primary: 'Inter', sans-serif;
+$font-family-secondary: 'Ubuntu', sans-serif;
+$normal-font-weight: 400;
+$semi-bold-font-weight: 500;
