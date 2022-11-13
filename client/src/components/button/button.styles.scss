@@ -1,0 +1,27 @@
+.btn {
+  color: #fff;
+  height: 4rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+
+  &-full {
+    width: 100%;
+  }
+
+  &.blue {
+    background-color: $color-primary;
+    color: #fff;
+  }
+
+  &.blue:focus {
+    box-shadow: 0 0 0 0.4rem rgba(73, 73, 199, 0.25);
+  }
+}
