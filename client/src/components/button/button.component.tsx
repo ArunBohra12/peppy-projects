@@ -3,7 +3,7 @@ import './button.styles.scss';
 type ButtonProps = {
   children: React.ReactNode;
   variant?: string;
-  class?: string;
+  className?: string;
   otherButtonAttributes?: React.HTMLAttributes<object>;
 };
 
@@ -15,10 +15,10 @@ const BUTTON_TYPES: ButtonTypes = {
   default: 'blue',
 };
 
-const Button = ({ children, variant = 'default' }: ButtonProps): JSX.Element => {
+const Button = ({ children, className, variant = 'default' }: ButtonProps): JSX.Element => {
   const buttonType = BUTTON_TYPES[variant];
 
-  return <button className={`btn ${buttonType}`}>{children}</button>;
+  return <button className={`btn ${buttonType} ${className}`}>{children}</button>;
 };
 
 export default Button;
