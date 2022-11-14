@@ -39,12 +39,14 @@
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
 
-  a {
-    width: 100%;
+  .auth-page-redirect {
     text-align: center;
-    margin-top: 2rem;
-    color: $color-gray-1;
-    text-decoration: underline;
+
+    a {
+      margin-top: 2rem;
+      color: $color-gray-1;
+      text-decoration: underline;
+    }
   }
 
   @media screen and (max-width: 460px) {

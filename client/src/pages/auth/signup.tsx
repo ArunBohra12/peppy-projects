@@ -91,7 +91,9 @@ const Signup = (): JSX.Element => {
         Signup
       </Button>
 
-      <Link to='/auth/login'>Sign in instead?</Link>
+      <div className='auth-page-redirect'>
+        <Link to='/login'>Sign in instead?</Link>
+      </div>
     </form>
   );
 };

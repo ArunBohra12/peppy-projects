@@ -7,7 +7,7 @@ import './scss/app.scss';
 const App = (): JSX.Element => {
   return (
     <Routes>
-      <Route path='/auth/:authAction/*' element={<Auth />} />
+      <Route path='*' element={<Auth />} />
     </Routes>
   );
 };

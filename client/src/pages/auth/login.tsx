@@ -54,7 +54,9 @@ const Login = (): JSX.Element => {
         Login
       </Button>
 
-      <Link to='/auth/signup'>Register instead?</Link>
+      <div className='auth-page-redirect'>
+        <Link to='/signup'>Register instead?</Link>
+      </div>
     </form>
   );
 };

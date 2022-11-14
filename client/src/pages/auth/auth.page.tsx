@@ -19,7 +19,7 @@ const Auth = (): JSX.Element => {
         <img src={authImageRight} alt='Peppy Projects' />
       </div>
 
-      <Card cardClass='auth-form-container'>{pathname === '/auth/signup' ? <Signup /> : <Login />}</Card>
+      <Card cardClass='auth-form-container'>{pathname === '/signup' ? <Signup /> : <Login />}</Card>
     </div>
   );
 };
