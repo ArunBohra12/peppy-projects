@@ -1,7 +1,8 @@
 body {
   font-size: 1.6rem;
   font-weight: 400;
-  font-family: 'Inter', sans-serif;
+  font-family: $font-family-primary;
+  box-sizing: border-box;
 }
 
 body,
@@ -16,5 +17,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: $font-family-secondary;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
 }

@@ -1,0 +1,66 @@
+.auth-page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-images {
+    img {
+      width: 30vw;
+      position: absolute;
+      bottom: 0;
+    }
+
+    img:first-child {
+      left: 3rem;
+    }
+
+    img:last-child {
+      right: 3rem;
+    }
+
+    @media screen and (max-width: 695px) {
+      display: none;
+    }
+  }
+}
+
+.login-form,
+.signup-form {
+  padding: 3rem 5rem;
+  width: min(45rem, 95vw);
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+
+  a {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    color: $color-gray-1;
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 460px) {
+    padding: 2rem 3rem;
+  }
+}
+
+.auth-form-details {
+  text-align: center;
+}
+
+.logo-img {
+  width: 12.5rem;
+}
+
+.form-message {
+  margin: 2rem 0 3rem;
+  color: $color-gray-1;
+}

@@ -1,0 +1,16 @@
+.input {
+  padding: 0.5rem 1rem;
+  font-size: inherit;
+  line-height: 1.5;
+  color: $color-black;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  outline: none;
+  border-radius: 5px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.input:focus {
+  border-color: $color-sky-blue;
+  box-shadow: $blue-box-shadow;
+}

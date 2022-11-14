@@ -1,10 +1,12 @@
+import Input from '../input/input.component';
+
 import './formGroup.styles.scss';
 
 type FormGroupProps = {
   label: string;
   id: string;
   otherLabelAttributes?: React.HTMLAttributes<object>;
-  otherInputAttributes?: React.HTMLAttributes<object>;
+  otherInputAttributes?: React.InputHTMLAttributes<object>;
 };
 
 const FormGroup = ({ label, id, otherInputAttributes, otherLabelAttributes }: FormGroupProps): JSX.Element => {
@@ -13,7 +15,7 @@ const FormGroup = ({ label, id, otherInputAttributes, otherLabelAttributes }: Fo
       <label htmlFor={id} {...otherLabelAttributes}>
         {label}
       </label>
-      <input id={id} {...otherInputAttributes} />
+      <Input otherInputAttributes={{ ...otherInputAttributes, id }} />
     </div>
   );
 };
