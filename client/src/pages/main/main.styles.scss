@@ -1,0 +1,64 @@
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  grid-template-rows: 6rem 1fr;
+}
+
+.header {
+  grid-column: 2 / -1;
+
+  background-color: #fff;
+}
+
+.sidebar {
+  grid-row: 1 / -1;
+  background-color: $color-primary;
+}
+
+.panel {
+  background-color: $color-gray-2;
+  padding: 4.5rem;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  > * {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.header,
+.panel {
+  box-shadow: $medium-box-shadow;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .app {
+    gap: 1rem;
+
+    > * {
+      border-radius: $border-radius-medium;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header,
+  .panel {
+    grid-column: 1 / -1;
+  }
+
+  .panel {
+    padding: 4.5rem 1rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
