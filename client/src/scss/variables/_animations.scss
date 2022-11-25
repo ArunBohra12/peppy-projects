@@ -6,3 +6,18 @@
     opacity: 1;
   }
 }
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.25, 1.25, 1.25);
+    transform: scale3d(1.25, 1.25, 1.25);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}

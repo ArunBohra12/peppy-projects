@@ -1,0 +1,221 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.sidebar-logo {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.sidebar-logo img {
+  width: 4rem;
+}
+
+.sidebar-navigation {
+  align-self: stretch;
+  text-align: center;
+  margin-top: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sidebar-navigation-item {
+  padding: 1rem 0;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-navigation-item.active {
+  border-left: 3px solid #fff;
+}
+
+.sidebar-link-text {
+  display: none;
+}
+
+/* Tooltip hover code */
+.sidebar-tooltip {
+  position: relative;
+}
+
+.sidebar-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -65%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+
+  /* Creates the triangle */
+  border-style: solid;
+  border-width: 4px;
+  border-color: transparent #2929ff transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.sidebar-tooltip::after {
+  content: attr(data-name);
+  position: absolute;
+  top: 50%;
+  left: 230%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  color: #2929ff;
+  padding: 0.6rem 1.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 0px 8px 8px 0px;
+  border-left: 2px solid #2929ff;
+  width: 9rem;
+  box-shadow: 0 0 9px 5px rgba(183, 192, 206, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.sidebar-tooltip:hover::before,
+.sidebar-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar-tooltip:hover::before {
+  right: -35%;
+}
+
+.sidebar-tooltip:hover::after {
+  left: 200%;
+}
+
+.sidebar-navigation-item svg {
+  vertical-align: middle;
+  cursor: pointer;
+  fill: #fff;
+  height: 2.2rem;
+  width: 2.2rem;
+  /* -3px left margin to counter the border for active link */
+  margin-left: -3px;
+}
+
+.sidebar-actions {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.create-task-action {
+  cursor: pointer;
+}
+
+.create-task-action svg {
+  height: 3.2rem;
+  width: 3.2rem;
+  fill: #ffbf54;
+}
+
+.profile-page-link,
+.create-task-action {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  gap: 2rem;
+}
+
+.user-logo {
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5rem;
+  color: #2929ff;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    width: min(30rem, 90%);
+    align-items: flex-start;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    z-index: 999;
+  }
+
+  .sidebar-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+  }
+
+  .sidebar-logo {
+    margin-top: 2.5rem;
+    margin-left: 4rem;
+  }
+
+  .sidebar-logo img {
+    width: 14rem;
+  }
+
+  .sidebar-navigation-item {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding-left: 4rem;
+    color: #fff;
+  }
+
+  .sidebar-link-text {
+    display: block;
+  }
+
+  .sidebar-tooltip:hover::before,
+  .sidebar-tooltip:hover::after {
+    content: unset;
+  }
+
+  .sidebar-actions {
+    margin-left: 4rem;
+  }
+}
+
+/* Animations */
+
+@media only screen and (min-width: 768px) {
+  .sidebar-navigation-item:hover svg,
+  .create-task-action:hover,
+  .profile-page-link:hover {
+    animation-name: pulse;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+  }
+}
