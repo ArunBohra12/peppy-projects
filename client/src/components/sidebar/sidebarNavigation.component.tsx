@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
+import { PageContext } from '../../context/page.context';
 import sidebarNavigationItems from './sidebarNavItems';
 
 const SidebarNavigation = (): JSX.Element => {
-  const currentPage = '/projects';
+  const { currentPage } = PageContext();
 
   return (
     <div className='sidebar-navigation'>
       {sidebarNavigationItems.map(navItem => {
-        const isActive = currentPage === navItem.path;
+        const isActive = currentPage.pagePath === navItem.path;
 
         return (
           <Link
