@@ -1,0 +1,77 @@
+.tasks-heading {
+  margin: 4rem 0 2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+
+  h2 {
+    font-weight: 500;
+  }
+
+  a {
+    color: $color-primary;
+    fill: $color-primary;
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+}
+
+// Task Table styles
+
+th.tasks-table {
+  &-id {
+    width: 10rem;
+  }
+
+  &-due-date,
+  &-status,
+  &-priority,
+  &-assignee {
+    width: 15rem;
+  }
+}
+
+// Tasks Table Media queries
+
+@media only screen and (max-width: 1100px) {
+  table .tasks-table-priority {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  table .tasks-table-due-date {
+    display: none;
+  }
+
+  th.tasks-table-status,
+  td.tasks-table-status {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  th.tasks-table-id {
+    width: 7rem;
+  }
+
+  th.tasks-table-assignee {
+    width: 10rem;
+  }
+
+  th.tasks-table-assignee,
+  td.tasks-table-assignee {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  table .tasks-table-status {
+    display: none;
+  }
+}
