@@ -1,0 +1,90 @@
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.profile-action-btn {
+  color: $color-gray-3;
+  padding: 0.8rem 2.2rem;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+
+  &.active {
+    color: $color-primary;
+    border-bottom: 3px solid $color-primary;
+  }
+}
+
+.user-details-actions {
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  gap: 3rem;
+  margin-top: 2rem;
+
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.user-details-container {
+  border-radius: 5px;
+  padding: 2rem 3rem 1rem;
+  background: #fff;
+  box-shadow: $light-box-shadow;
+}
+
+.user-photo {
+  height: 10rem;
+  width: 10rem;
+  background-color: #d2d2f1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    height: 8rem;
+    width: 8rem;
+    fill: $color-primary;
+  }
+}
+
+.user-name {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin: 1.5rem 0;
+}
+
+.user-email > p:first-of-type,
+.created-at > p:first-of-type {
+  color: $color-gray-3;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.user-email > p:last-of-type,
+.created-at > p:last-of-type {
+  font-size: 1.4rem;
+  color: $color-black;
+  margin-top: 5px;
+  margin-bottom: 0.8rem;
+}
+
+.user-actions {
+  box-shadow: $light-box-shadow;
+  background: #fff;
+  border-radius: 5px;
+  padding: 2rem;
+
+  form {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+
+  input[type='email'] {
+    background-color: $color-gray-2;
+  }
+}
