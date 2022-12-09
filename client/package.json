@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "node ./scripts/tinymce.js"
   },
   "dependencies": {
+    "@tinymce/tinymce-react": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "tinymce": "^6.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
