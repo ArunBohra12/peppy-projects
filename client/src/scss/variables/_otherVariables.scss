@@ -5,3 +5,10 @@ $border-radius-large: 15px;
 $light-box-shadow: 0px 0px 3rem rgba(0, 0, 0, 0.2);
 $medium-box-shadow: 0 1px 0.4rem rgba(0, 0, 0, 0.5);
 $blue-box-shadow: 0 0 0 0.4rem rgba(13, 110, 253, 0.25);
+
+$overlay: rgba(0, 0, 0, 0.6);
+
+$z-index-min: 1;
+$z-index-small: 99;
+$z-index-medium: 999;
+$z-index-large: 9999;

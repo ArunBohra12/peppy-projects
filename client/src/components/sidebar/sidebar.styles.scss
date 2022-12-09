@@ -168,13 +168,13 @@
 
   .sidebar.open {
     transform: translateX(0);
-    z-index: 999;
+    z-index: $z-index-small;
   }
 
   .sidebar-overlay.open {
     opacity: 1;
     visibility: visible;
-    z-index: 999;
+    z-index: $z-index-small;
   }
 
   .sidebar-logo {

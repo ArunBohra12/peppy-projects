@@ -1,0 +1,46 @@
+.modal {
+  &-container,
+  &-overlay,
+  &-content {
+    z-index: $z-index-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: $overlay;
+  }
+
+  &-content {
+    height: 50vh;
+    width: 50vw;
+    background-color: #fff;
+    border-radius: $border-radius-small;
+
+    animation-name: scaleToFull;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+  }
+}

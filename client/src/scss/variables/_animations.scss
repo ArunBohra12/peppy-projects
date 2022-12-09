@@ -1,5 +1,5 @@
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
   }
   to {
@@ -8,7 +8,7 @@
 }
 
 @keyframes pulse {
-  0% {
+  from {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
@@ -19,5 +19,15 @@
   to {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+}
+
+@keyframes scaleToFull {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
   }
 }
