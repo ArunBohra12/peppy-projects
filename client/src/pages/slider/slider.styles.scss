@@ -1,0 +1,41 @@
+.slider {
+  position: fixed;
+  top: 0;
+  right: -120%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 99;
+  box-shadow: -5px 0 1rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+
+  &.open {
+    right: 0;
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    z-index: 9;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+
+  .btn:focus {
+    box-shadow: 0 0 0 0.2rem rgb(73, 73, 199, 0.25);
+  }
+
+  &-close-btn {
+    position: absolute;
+    left: -5rem;
+    top: 1rem;
+    height: auto;
+    padding: 0.5rem;
+  }
+}

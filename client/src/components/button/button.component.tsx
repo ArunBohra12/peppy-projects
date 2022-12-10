@@ -15,10 +15,14 @@ const BUTTON_TYPES: ButtonTypes = {
   default: 'blue',
 };
 
-const Button = ({ children, className, variant = 'default' }: ButtonProps): JSX.Element => {
+const Button = ({ children, className, variant = 'default', otherButtonAttributes }: ButtonProps): JSX.Element => {
   const buttonType = BUTTON_TYPES[variant];
 
-  return <button className={`btn ${buttonType} ${className}`}>{children}</button>;
+  return (
+    <button className={`btn ${buttonType} ${className}`} {...otherButtonAttributes}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
