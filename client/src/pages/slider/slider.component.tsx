@@ -8,13 +8,13 @@ type SliderProps = {
   sliderState: boolean;
   toggleSliderState?: () => void;
   overlayBackground?: string;
-  overlayStyles?: React.CSSProperties;
-  sliderStyles?: React.CSSProperties;
+  overlayClass?: string;
+  sliderClass?: string;
   children: React.ReactNode;
 };
 
 const Slider = (props: SliderProps) => {
-  const { children, sliderState, toggleSliderState, overlayBackground, overlayStyles, sliderStyles } = props;
+  const { children, sliderState, toggleSliderState, overlayBackground, overlayClass, sliderClass } = props;
 
   const sliderOverlayBackground = overlayBackground || 'rgba(0, 0, 0, .7)';
 
@@ -23,10 +23,10 @@ const Slider = (props: SliderProps) => {
   return (
     <>
       <div
-        className={`slider-overlay ${isSliderOpen}`}
+        className={`slider-overlay ${isSliderOpen} ${overlayClass ?? ''}`}
         onClick={toggleSliderState}
-        style={{ background: sliderOverlayBackground, ...overlayStyles }}></div>
-      <div className={`slider ${isSliderOpen}`} style={sliderStyles}>
+        style={{ background: sliderOverlayBackground }}></div>
+      <div className={`slider ${isSliderOpen} ${sliderClass ?? ''}`}>
         <Button className='slider-close-btn' otherButtonAttributes={{ onClick: toggleSliderState }}>
           <CrossIcon />
         </Button>
