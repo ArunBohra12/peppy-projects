@@ -1,3 +1,8 @@
+/**
+ * It's a React component that renders a dropdown with custom styles
+ * @param {DropdownProps} props - all necessary props for the dropdown
+ * @returns A React select component
+ */
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import { StateManagerProps } from 'react-select/dist/declarations/src/stateManager';
@@ -20,7 +25,6 @@ type DropdownProps = {
   stylesConfig?: StylesConfig;
   controlStyles?: React.CSSProperties;
   optionStyles?: React.CSSProperties;
-  resetDropdown?: () => void;
 };
 
 /**
@@ -29,19 +33,12 @@ type DropdownProps = {
  * @returns A React select component
  */
 const Dropdown = (props: DropdownProps): JSX.Element => {
-  const {
-    options,
-    className,
-    otherDropdownProps,
-    stylesConfig,
-    controlStyles,
-    optionStyles,
-    handleChange,
-    resetDropdown,
-  } = props;
+  // prettier-ignore
+  const { options, className, otherDropdownProps, stylesConfig, controlStyles, optionStyles, handleChange } = props;
 
   const [selectValue, setSelectValue] = useState<DropdownOpion>(options[0]);
 
+  // Might need to change the following effect later
   useEffect(() => {
     handleChange && handleChange(selectValue);
   }, [selectValue]);
@@ -71,8 +68,6 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
     singleValue: provided => ({ ...provided }),
     ...stylesConfig,
   };
-
-  const resetValue = (): void => setSelectValue(options[0]);
 
   return (
     <Select

@@ -1,0 +1,8 @@
+.task-filter-dropdown {
+  margin-left: auto;
+  min-width: 20rem;
+
+  @media only screen and (max-width: 590px) {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,36 @@
+.tasks-filter-slider {
+  overflow-y: scroll;
+}
+
+.tasks-filter-slider {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.filter-options {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+
+  .input:focus {
+    box-shadow: $blue-box-shadow-small;
+  }
+
+  .btn:focus {
+    box-shadow: $blue-box-shadow-small;
+  }
+}
+
+.tasks-filter-slider svg,
+.filter-options svg {
+  stroke-width: 1px;
+}
+
+.tasks-filter-slider {
+  width: min(80vw, 35rem);
+}

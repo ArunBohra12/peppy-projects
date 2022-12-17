@@ -1,0 +1,58 @@
+.task-filter-slider-content {
+  padding: 2.5rem;
+}
+
+.filter-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4rem;
+
+  h3 {
+    font-weight: 400;
+  }
+
+  .reset-filters {
+    color: $color-primary;
+    cursor: pointer;
+  }
+}
+
+.task-filters-container {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.task-filter-option {
+  p {
+    margin-bottom: 1rem;
+    color: $color-gray-light;
+  }
+
+  .task-filter-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .single-filter-reset {
+    position: relative;
+    cursor: pointer;
+
+    svg {
+      color: $color-primary;
+      font-size: 1.4rem;
+      margin-left: -1.6rem;
+    }
+
+    .cross-icon {
+      position: absolute;
+      bottom: 2px;
+      right: 0;
+      color: $color-primary;
+      height: 0.8rem;
+      width: 0.8rem;
+      transform: rotate(45deg);
+    }
+  }
+}
