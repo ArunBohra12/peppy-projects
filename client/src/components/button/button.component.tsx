@@ -19,7 +19,7 @@ const Button = ({ children, className, variant = 'default', otherButtonAttribute
   const buttonType = BUTTON_TYPES[variant];
 
   return (
-    <button className={`btn ${buttonType} ${className}`} {...otherButtonAttributes}>
+    <button className={`btn ${buttonType} ${className ?? ''}`} {...otherButtonAttributes}>
       {children}
     </button>
   );
