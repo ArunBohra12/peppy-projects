@@ -23,4 +23,9 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Client directories and files
 /client/public/tinymce
+
+# Server directories and files
+server/config.env
